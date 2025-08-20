@@ -1,0 +1,104 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: monospace, sans-serif;
+  background-color: #000;
+  color: #eee;
+  line-height: 1.5;
+}
+
+/* Header */
+header {
+  display: flex;
+  flex-direction: column; /* título em cima, menu embaixo */
+  align-items: center;    /* centraliza horizontalmente */
+  padding: 1rem 2rem;
+  border-bottom: 1px solid #333;
+}
+
+header h1 {
+  color: #ff0000;
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem; /* espaço entre título e nav */
+}
+
+nav {
+  display: flex;
+  gap: 1rem; /* espaçamento entre os links */
+}
+
+nav a {
+  color: #eee;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #ff4444;
+}
+
+/* Hero */
+.hero {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: linear-gradient(to bottom, #000, #111);
+}
+
+.hero h2 {
+  font-size: 3rem;
+  color: #fff;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  color: #ccc;
+  font-size: 1.2rem;
+}
+
+/* Cards */
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 2rem;
+}
+
+.card {
+  background-color: #111;
+  border: 1px solid #333;
+  padding: 1rem;
+  flex: 1 1 300px;
+  border-radius: 8px;
+  transition: border-color 0.3s;
+}
+
+.card:hover {
+  border-color: #ff4444;
+}
+
+.card h3 {
+  color: #ff0000;
+  margin-bottom: 0.5rem;
+}
+
+/* Section títulos */
+section h3 {
+  text-align: center;
+  font-size: 2rem;
+  color: #ff0000;
+  margin-bottom: 1rem;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1rem;
+  border-top: 1px solid #333;
+  font-size: 0.9rem;
+  color: #888;
+}

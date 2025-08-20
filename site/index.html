@@ -1,0 +1,90 @@
+<!DOCTYPE html> 
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For Lauanny</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Música de fundo -->
+  <audio id="bg-music" loop>
+    <source src="System Of A Down - Lonely Day (Official HD Video).mp3" type="audio/mpeg">
+    Seu navegador não suporta áudio.
+  </audio>
+
+  <!-- Botão de controle da música -->
+  <div style="text-align:center; margin: 1rem;">
+    <button id="music-btn" 
+      style="background:#ff0000; color:#fff; border:none; padding:10px 20px; border-radius:8px; cursor:pointer; font-size:1rem;">
+      ▶ Play Música
+    </button>
+  </div>
+
+  <!-- Header -->
+  <header>
+    <h1>System of a Down</h1>
+    <nav>
+      <a href="#band">Te amo</a>
+      <a href="#albums">Te amo</a>
+      <a href="#legacy">Te amo</a>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <h2>"Lonely Day"</h2>
+    <p>A nossa musica!!!</p>
+  </section>
+
+  <!-- Banda -->
+  <section id="band" class="cards">
+    <div class="card">
+      <h3>A Banda</h3>
+      <p>Formada em 1994, System of a Down mistura nossos corações em uma só canção Lonely Day</p>
+    </div>
+    <div class="card">
+      <h3>Estilo</h3>
+      <p>Combinando agressividade e melodias suaves, a banda se destacou por ser tão boa que uniu nossos corações e mentes através da melodia!!</p>
+    </div>
+  </section>
+
+  <!-- Álbuns -->
+  <section id="albums">
+    <h3>Álbuns Icônicos</h3>
+    <div class="cards">
+      <div class="card">System of a Down (1998)</div>
+      <div class="card">Toxicity (2001)</div>
+      <div class="card">Mezmerize (2005)</div>
+      <div class="card">Hypnotize (2005)</div>
+    </div>
+  </section>
+
+  <!-- Legado -->
+  <section id="legacy">
+    <h3>Legado</h3>
+    <p>System of a Down não é apenas música – é uma voz que pode unir corações e pessoas assim como foi com a gente eu e você para todo sempre!!!</p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    © 2025 Site feito para Lauanny (com amor)
+  </footer>
+
+  <!-- Script para controle do áudio -->
+  <script>
+    const music = document.getElementById("bg-music");
+    const btn = document.getElementById("music-btn");
+
+    btn.addEventListener("click", () => {
+      if (music.paused) {
+        music.play();
+        btn.textContent = "⏸ Pausar Música";
+      } else {
+        music.pause();
+        btn.textContent = "▶ Play Música";
+      }
+    });
+  </script>
+</body>
+</html>
