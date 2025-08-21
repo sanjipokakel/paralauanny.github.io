@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Toxicity - System of a Down</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to bottom, #111 20%, #000 100%);
+      color: #fff;
+      font-family: monospace, sans-serif;
+      text-align: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    /* Nuvens no topo */
+    .clouds {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 200px;
+      background: url(blue-cloud-icon-png.webp) repeat-x;
+      background-size: cover;
+      animation: moveClouds 60s linear infinite;
+      opacity: 0.7;
+    }
+
+    @keyframes moveClouds {
+      from { background-position: 0 0; }
+      to { background-position: -2000px 0; }
+    }
+
+    /* PNG flutuando */
+    .floating {
+      position: absolute;
+      top: 35%;
+      left: 50%;
+      transform: translateX(-50%);
+      animation: float 4s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translate(-50%, 0); }
+      50% { transform: translate(-50%, -20px); }
+    }
+
+    /* Texto acima do botão */
+    .phrase {
+      position: absolute;
+      top: 70%;
+      width: 100%;
+      font-size: clamp(1.2rem, 2vw, 2rem);
+      color: #ffcccc;
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    /* Botão */
+    .play-btn {
+      position: absolute;
+      top: 78%;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #ff0000;
+      color: #fff;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .play-btn:hover {
+      background: #cc0000;
+    }
+  </style>
+</head>
+<body>
+  <!-- Nuvens -->
+  <div class="clouds"></div>
+
+  <!-- PNG que flutua -->
+  <img src="8uwqxm.jpg" alt="Imagem Flutuante" class="floating" width="200">
+
+  <!-- Texto acima do botão -->
+  <div class="phrase">Você chegou na minha vida como Aerials descendo do céu</div>
+
+  <!-- Música -->
+  <audio id="music" loop>
+    <source src="System Of A Down - Aerials (Official HD Video).mp3" type="audio/mpeg">
+    Seu navegador não suporta áudio.
+  </audio>
+
+  <!-- Botão -->
+  <button class="play-btn" onclick="toggleMusic()">▶ Play Música</button>
+
+  <script>
+    const music = document.getElementById("music");
+    const btn = document.querySelector(".play-btn");
+
+    function toggleMusic() {
+      if (music.paused) {
+        music.play();
+        btn.textContent = "⏸ Pausar Música";
+      } else {
+        music.pause();
+        btn.textContent = "▶ Play Música";
+      }
+    }
+  </script>
+</body>
+</html>

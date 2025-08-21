@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>System of a Down (1998)</title>
+  <style>
+    :root {
+      --bg: #000;
+      --fg: #eee;
+      --muted: #aaa;
+      --accent: #ff0000;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { height: 100%; background: var(--bg); color: var(--fg); }
+    body { font-family: monospace, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
+
+    /* Centro absoluto da página */
+    .page {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 2rem;
+      gap: 1rem;
+      background: radial-gradient(1200px 600px at 50% 0%, #0a0a0a 0%, #000 60%);
+    }
+
+    .phrase {
+      font-size: clamp(1.6rem, 5vw, 3rem);
+      letter-spacing: 0.02em;
+    }
+
+    .btn {
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: transform 0.08s ease, filter 0.2s ease;
+    }
+    .btn:hover { filter: brightness(1.1); }
+    .btn:active { transform: scale(0.98); }
+
+    .hint {
+      font-size: 0.9rem;
+      color: var(--muted);
+      user-select: none;
+    }
+
+    /* Acessibilidade (texto oculto para screen readers) */
+    .sr-only {
+      position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+      overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+    }
+  </style>
+</head>
+<body>
+  <!-- Áudio (deixe o arquivo .mp3 na mesma pasta e ajuste o nome) -->
+  <audio id="album-music" preload="auto">
+    <source src="System of a Down  - Sugar.mp3" type="audio/mpeg">
+    Seu navegador não suporta áudio.
+  </audio>
+
+  <main class="page">
+    <h1 class="sr-only">System of a Down (1998)</h1>
+    <p class="phrase">antes de te conhecer era tudo assim</p>
+    <button id="playBtn" class="btn">▶ Play</button>
+    <div class="hint">clique para tocar</div>
+  </main>
+
+  <script>
+    const audio = document.getElementById('album-music');
+    const btn = document.getElementById('playBtn');
+
+    btn.addEventListener('click', async () => {
+      try {
+        if (audio.paused) {
+          await audio.play();
+          btn.textContent = '⏸ Pausar';
+        } else {
+          audio.pause();
+          btn.textContent = '▶ Play';
+        }
+      } catch (e) {
+        console.error('Erro ao reproduzir:', e);
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mezmerize - System of a Down</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to bottom, #111, #000);
+      color: #fff;
+      font-family: monospace, sans-serif;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+    }
+
+    .phrase {
+      font-size: clamp(1.5rem, 4vw, 2.5rem);
+      color: #ff9999;
+      margin-bottom: 2rem;
+    }
+
+    .play-btn {
+      background: #ff0000;
+      color: #fff;
+      border: none;
+      padding: 14px 28px;
+      border-radius: 10px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.1s;
+    }
+
+    .play-btn:hover {
+      background: #cc0000;
+    }
+
+    .play-btn:active {
+      transform: scale(0.97);
+    }
+  </style>
+</head>
+<body>
+  <!-- Texto centralizado -->
+  <div class="phrase">acho que eu sou o Danny e você a Lisa ❤️</div>
+
+  <!-- Música -->
+  <audio id="music" loop>
+    <source src="System Of A Down - Radio⧸Video (Official Audio).mp3" type="audio/mpeg">
+    Seu navegador não suporta áudio.
+  </audio>
+
+  <!-- Botão -->
+  <button class="play-btn" onclick="toggleMusic()">▶ Play Música</button>
+
+  <script>
+    const music = document.getElementById("music");
+    const btn = document.querySelector(".play-btn");
+
+    function toggleMusic() {
+      if (music.paused) {
+        music.play();
+        btn.textContent = "⏸ Pausar Música";
+      } else {
+        music.pause();
+        btn.textContent = "▶ Play Música";
+      }
+    }
+  </script>
+</body>
+</html>

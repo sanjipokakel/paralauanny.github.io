@@ -102,3 +102,8 @@ footer {
   font-size: 0.9rem;
   color: #888;
 }
+.cards a.card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
